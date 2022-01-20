@@ -1,14 +1,18 @@
 package com.bosonit.arantxamorcillo;
 
 
+import static java.lang.Integer.parseInt;
 
 public class Person {
     private String name;
     private String city = DEFAULT_CITY;
     private String age =  DEFAULT_AGE;
 
-    public String getAge() {
-        return age;
+    private static final String DEFAULT_CITY = "Unknown";
+    private static final String DEFAULT_AGE = "0";
+
+    public int getAge() {
+        return  Integer.parseInt(age);
     }
 
     public void setAge(String age) {
@@ -17,8 +21,7 @@ public class Person {
 
 
 
-    private static final String DEFAULT_CITY = "Unknown";
-    private static final String DEFAULT_AGE = "Unknown";
+
 
     public String getName() {
         return name;
@@ -36,6 +39,10 @@ public class Person {
 
     public void setCity(String city) {
             this.city = city;
+    }
+    @Override
+    public String toString() {
+        return "Nombre: "+name+" Poblacion: "+city+" Edad: "+age;
     }
 
 
